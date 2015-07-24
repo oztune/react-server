@@ -26,7 +26,7 @@ And your index.html has:
 
 ## Set up
 
-    npm install --save-dev git+ssh://git@github.com:oztune/react-server.git
+    npm install --save-dev git+https://oztune@github.com/react-server/react-server.git
 
 In your package.json:
 
