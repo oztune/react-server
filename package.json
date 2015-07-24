@@ -2,10 +2,7 @@
   "name": "react-server",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
-  "bin": {
-    "react-server": "./main.js"
-  },
+  "bin": "./cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
