@@ -23,6 +23,10 @@ module.exports = function (staticPath) {
         res.sendFile(staticPath + '/index.html');
     });
 
+    app.use(function (err, req, res, next) {
+        res.send(200, "document.body.innerHTML = '" + "<h1>Error in " + req.url + "</h1>" + "<code>" + JSON.stringify(err) + "</code>'");
+    });
+
     app.listen(3000, function () {
         console.log('Serving from ' + staticPath);
         console.log('Listening on port 3000');
