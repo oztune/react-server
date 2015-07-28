@@ -1,19 +1,17 @@
 var express = require('express'),
-    enchilada = require('enchilada'),
-    expressLess = require('express-less');
+    expressLess = require('express-less'),
+    browserifyMiddleware = require('browserify-middleware'),
+    babelify = require('babelify');
 
 module.exports = function (staticPath) {
     var app = express();
 
     app.use(expressLess(staticPath));
 
-    app.use(enchilada({
-    	cache: false,
-    	src: staticPath,
-        debug: true,
-    	transforms: [
-            'babelify'
-        ]
+    app.use(browserifyMiddleware(staticPath, {
+        transform: [babelify.configure({
+            optional: ['es7.decorators']
+        })]
     }));
 
     app.use(express.static(staticPath));
@@ -23,9 +21,13 @@ module.exports = function (staticPath) {
         res.sendFile(staticPath + '/index.html');
     });
 
-    app.use(function (err, req, res, next) {
-        res.send(200, "document.body.innerHTML = '" + "<h1>Error in " + req.url + "</h1>" + "<code>" + JSON.stringify(err) + "</code>'");
-    });
+    // Print out errors as html. Not needed since
+    // browserifyMiddleware does it already. May be helpful
+    // If something else in the pipeline fails.
+    //
+    // app.use(function (err, req, res, next) {
+    //     res.send(200, "document.body.innerHTML = '" + "<h1>Error in " + req.url + "</h1>" + "<code>" + JSON.stringify(err) + "</code>'");
+    // });
 
     app.listen(3000, function () {
         console.log('Serving from ' + staticPath);
