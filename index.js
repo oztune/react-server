@@ -10,7 +10,7 @@ module.exports = function (staticPath) {
 
     app.use(browserifyMiddleware(staticPath, {
         transform: [babelify.configure({
-            optional: ['es7.decorators']
+            optional: ['es7.decorators', 'es7.classProperties', 'es7.objectRestSpread']
         })]
     }));
 
