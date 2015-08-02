@@ -3,7 +3,7 @@ var express = require('express'),
     browserifyMiddleware = require('browserify-middleware'),
     babelify = require('babelify');
 
-browserifyMiddleware.settings.mode = 'production';
+// browserifyMiddleware.settings.mode = 'production';
 
 module.exports = function (staticPath) {
     var app = express();
