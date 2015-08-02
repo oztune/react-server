@@ -3,8 +3,24 @@ var express = require('express'),
     browserifyMiddleware = require('browserify-middleware'),
     babelify = require('babelify');
 
+browserifyMiddleware.settings.mode = 'production';
+
 module.exports = function (staticPath) {
     var app = express();
+
+    // This is just for testing.
+    // It allows to conditionally include the babel polyfills
+    // as a script tag instead of doing require('babel/polyfill')
+    //
+    // It can be made better by using our own babel-core instead of
+    // babelify's
+    //
+    // So far I'm not using this because the requirements in
+    // https://facebook.github.io/react/docs/working-with-the-browser.html#polyfills-needed-to-support-older-browsers
+    // suffice.
+    app.get('/browser-polyfill.js', function (req, res) {
+        res.sendfile(__dirname + '/node_modules/babelify/node_modules/babel-core/browser-polyfill.min.js');
+    });
 
     app.use(expressLess(staticPath));
 

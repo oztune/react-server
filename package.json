@@ -13,8 +13,5 @@
     "browserify-middleware": "^7.0.0",
     "express": "^4.13.1",
     "express-less": "0.0.7"
-  },
-  "devDependencies": {
-    "express-less": "0.0.7"
   }
 }
