@@ -1,13 +1,10 @@
-var express = require('express'),
-    expressLess = require('express-less'),
+var expressLess = require('express-less'),
     browserifyMiddleware = require('browserify-middleware'),
     babelify = require('babelify');
 
 // browserifyMiddleware.settings.mode = 'production';
 
-module.exports = function (staticPath) {
-    var app = express();
-
+module.exports = function (app, staticPath) {
     // This is just for testing.
     // It allows to conditionally include the babel polyfills
     // as a script tag instead of doing require('babel/polyfill')
@@ -44,9 +41,4 @@ module.exports = function (staticPath) {
     // app.use(function (err, req, res, next) {
     //     res.send(200, "document.body.innerHTML = '" + "<h1>Error in " + req.url + "</h1>" + "<code>" + JSON.stringify(err) + "</code>'");
     // });
-
-    app.listen(3000, function () {
-        console.log('Serving from ' + staticPath);
-        console.log('Listening on port 3000');
-    });
-}
+};

@@ -2,7 +2,7 @@
 
 Features:
 - Browserifies js files
-- Uses enchilada for fast reloads
+- Fast rebuilds
 - Renders ECMA2015 syntax
 - Renders `.less` files
 - Serves `index.html` when no file exists to support single-page apps
@@ -26,7 +26,7 @@ And your index.html has:
 
 ## Set up
 
-    npm install --save-dev git+https://oztune@github.com/react-server/react-server.git
+    npm install --save-dev oztune/react-server
 
 In your package.json:
 
@@ -37,3 +37,7 @@ In your package.json:
 ## Running it
 
     npm start
+
+## TODO
+
+Figure out the best way to provide production prebuilding
