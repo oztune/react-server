@@ -5,7 +5,7 @@ var express = require('express'),
     path = require('path'),
     staticPath = path.resolve(process.cwd(), dir || ''),
     app = express(),
-    middleware = require('.')
+    middleware = require('./')
 
 middleware(app, staticPath);
 

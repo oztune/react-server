@@ -1,4 +1,5 @@
-var expressLess = require('express-less'),
+var express = require('express'),
+    expressLess = require('express-less'),
     browserifyMiddleware = require('browserify-middleware'),
     babelify = require('babelify');
 
