@@ -2,6 +2,7 @@
 
 var express = require('express'),
 	dir = process.argv[2],
+	port = process.argv[3] || 3000,
     path = require('path'),
     staticPath = path.resolve(process.cwd(), dir || ''),
     app = express(),
@@ -9,7 +10,7 @@ var express = require('express'),
 
 middleware(app, staticPath);
 
-app.listen(3000, function () {
+app.listen(port, function () {
     console.log('Serving from ' + staticPath);
-    console.log('Listening on port 3000');
+    console.log('Listening on port ' + port);
 });
