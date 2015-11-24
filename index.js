@@ -3,7 +3,7 @@ var express = require('express'),
     browserifyMiddleware = require('browserify-middleware'),
     babelify = require('babelify');
 
-// browserifyMiddleware.settings.mode = 'production';
+browserifyMiddleware.settings.mode = 'production';
 
 module.exports = function (app, staticPath) {
     // This is just for testing.
@@ -24,7 +24,8 @@ module.exports = function (app, staticPath) {
 
     app.use(browserifyMiddleware(staticPath, {
         transform: [babelify.configure({
-            optional: ['es7.decorators', 'es7.classProperties', 'es7.objectRestSpread']
+            // optional: ['es7.decorators', 'es7.classProperties', 'es7.objectRestSpread']
+            "presets": ["es2015", "stage-0", "react"]
         })]
     }));
 
