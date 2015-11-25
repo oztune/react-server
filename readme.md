@@ -14,8 +14,10 @@ npm install -g oztune/react-server
 ```
 
 ```
-react-server .
+react-server . [port]
 ```
+
+Visit `localhost:3000` in the browser.
 
 ## Recommended usage within a project
 
