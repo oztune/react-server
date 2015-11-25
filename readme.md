@@ -2,7 +2,7 @@
 
 It works very similarly to `python -m SimpleHTTPServer` only that it precompiles `.js` and `.less` files before serving them.
 
-Features:
+## Features
 - Browserifies js files
 - Fast rebuilds
 - Renders ECMA2015 syntax
