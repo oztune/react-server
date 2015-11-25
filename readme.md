@@ -23,7 +23,7 @@ Visit `localhost:3000` in the browser.
 
 ## Recommended usage within a project
 
-First, install it as a dev dependency to avoid relying on a global package with an unknown version.
+First, install it as a dev dependency to avoid relying on a global package with a potentially unknown version.
 
 ```
 npm install --save-dev oztune/react-server
