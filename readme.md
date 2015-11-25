@@ -45,7 +45,3 @@ Now you can pretend that you're working in an enviornment that supports the late
 ## Built in support for one page apps
 
 Whenever you request a file from the server that doesn't exist (eg. `localhost:3000/some/crazy/path`) it just serves your `index.html` file, making it simple to build one page apps.
-
-## TODO
-
-Figure out the best way to provide production prebuilding
