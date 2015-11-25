@@ -29,7 +29,7 @@ First, install it as a dev dependency to avoid relying on a global package with 
 npm install --save-dev oztune/react-server
 ```
 
-Let's assume that project structure looks something like this:
+Let's assume that your project structure looks something like this:
 
     |my-app/
     |-- package.json
