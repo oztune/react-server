@@ -1,5 +1,7 @@
 # React server - a tiny development react server
 
+It works very similarly to `python -m SimpleHTTPServer` only that it precompiles `.js` and `.less` files before serving them.
+
 Features:
 - Browserifies js files
 - Fast rebuilds
