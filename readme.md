@@ -23,12 +23,6 @@ react-server .
 npm install --save-dev oztune/react-server
 ```
 
-In your package.json:
-
-    "scripts": {
-        "start": "react-server ./src"
-    }
-
 Say your project structure looks like this:
 
     |my-app/
@@ -37,10 +31,18 @@ Say your project structure looks like this:
     |---- index.html
     |---- index.js
     |---- style.less
+    
+Add this to your package.json for convenience:
 
-Put this in your `index.html` file (note that `index.js` is 
+    "scripts": {
+        "start": "react-server ./src"
+    }
+
+Now you can pretend that you're working in an enviornment that supports the latest features. For example, assuming `index.js` is the entry point file, simply add this to your `index.html`:
 
     <script src="index.js"></script>
+    
+> Whenever you request a file from the server that doesn't exist (eg. `localhost:3000/some/crazy/path`) it just serves your `index.html` file, making it simple to build one page apps.
 
 ## TODO
 
