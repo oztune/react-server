@@ -7,7 +7,19 @@ Features:
 - Renders `.less` files
 - Serves `index.html` when no file exists to support single-page apps
 
+## Set up
+
+    npm install --save-dev oztune/react-server
+
+In your package.json:
+
+    "scripts": {
+        "start": "react-server ./src"
+    }
+
 ## Usage:
+
+- The server tries to be as unopinionated as possible. The only requirement is that the folder you pass as the root has an `index.html` file inside.
 
 Say your project structure looks like this:
 
@@ -23,20 +35,6 @@ Say your project structure looks like this:
 And your index.html has:
 
     <script src="index.js"></script>
-
-## Set up
-
-    npm install --save-dev oztune/react-server
-
-In your package.json:
-
-    "scripts": {
-        "start": "react-server ./src"
-    }
-
-## Running it
-
-    npm start
 
 ## TODO
 
