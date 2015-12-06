@@ -16,16 +16,14 @@ module.exports = function (app, staticPath) {
     // So far I'm not using this because the requirements in
     // https://facebook.github.io/react/docs/working-with-the-browser.html#polyfills-needed-to-support-older-browsers
     // suffice.
-    app.get('/browser-polyfill.js', function (req, res) {
-        res.sendfile(__dirname + '/node_modules/babelify/node_modules/babel-core/browser-polyfill.min.js');
+    app.get('/polyfill.js', function (req, res) {
+        res.sendfile(require.resolve('babel-core/browser-polyfill.min.js'));
     });
 
     app.use(expressLess(staticPath));
 
     app.use(browserifyMiddleware(staticPath, {
-        transform: [babelify.configure({
-            optional: ['es7.decorators', 'es7.classProperties', 'es7.objectRestSpread']
-        })]
+        transform: [babelify.configure({})]
     }));
 
     app.use(express.static(staticPath));
